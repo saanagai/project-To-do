@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 
 export default function Home() {
-  const [todos, setTodos] = useState(["a", "b"]);
+  const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
 
   const addTodoHandler = () => {
@@ -24,14 +24,14 @@ export default function Home() {
           />
           <button onClick={addTodoHandler}>Add</button>
         </div>
-        <div className={styles.flex}>
+        <div className={styles.flexButton}>
           <button>All</button>
           <button>Active</button>
           <button>Completed</button>
           {/* <button onClick={deleteHandler}>Delete</button> */}
         </div>
 
-        <p>No tasks yet. Add one above!</p>
+        <p className={styles.text}>No tasks yet. Add one above!</p>
         <div className={styles.flex}>
           <p>Powered by</p>
           <a href="https://pinecone.mn/">Pinecone academy</a>
