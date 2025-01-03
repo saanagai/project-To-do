@@ -1,6 +1,11 @@
 "use client";
 import { useState } from "react";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
+import { Component } from "react";
+import styles from "../Component/styles/page.module.css";
+import Container from "../Component/Container";
+// import Container from "../Component/Tasks";
+import Tasks from "@/Component/Task";
 
 export default function Home() {
   const [todos, setTodos] = useState([]);
@@ -25,7 +30,10 @@ export default function Home() {
           <button onClick={addTodoHandler}>Add</button>
         </div>
         <div className={styles.flexButton}>
-          <button>All</button>
+          <div className={styles.blueAll}>
+            <button>All</button>
+          </div>
+
           <button>Active</button>
           <button>Completed</button>
           {/* <button onClick={deleteHandler}>Delete</button> */}
@@ -36,11 +44,12 @@ export default function Home() {
           <p>Powered by</p>
           <a href="https://pinecone.mn/">Pinecone academy</a>
         </div>
-        <div>
+        <Tasks todos={todos} />
+        {/* <div>
           {todos.map((todo, index) => {
             return <p key={index}>{todo}</p>;
           })}
-        </div>
+        </div> */}
       </div>
     </div>
   );
